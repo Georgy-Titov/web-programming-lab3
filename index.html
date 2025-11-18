@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2048 — WEB</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="game-container">
+      <div class="game-header">
+        <h1>2048 — WEB</h1>
+        <div class="score-box">
+          <div>Счёт</div>
+          <div id="score">0</div>
+        </div>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board" id="board"></div>
+      </div>
+
+      <div class="game-controls">
+        <button id="undoBtn">Отмена хода</button>
+        <button id="restartBtn">Начать заново</button>
+        <button id="leaderBtn">Таблица лидеров</button>
+      </div>
+    </div>
+
+    <div class="mobile-controls" id="mobileControls">
+      <div class="mobile-controls-grid">
+        <div class="control-row">
+          <div class="dir-btn" data-dir="up">▲</div>
+        </div>
+        <div class="control-row">
+          <div class="dir-btn" data-dir="left">◀</div>
+          <div class="dir-btn" data-dir="down">▼</div>
+          <div class="dir-btn" data-dir="right">▶</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop hidden" id="gameOverBackdrop">
+      <div class="modal game-over-modal">
+        <div id="gameOverMsg">Игра окончена!</div>
+        <div id="saveRow">
+          <input id="playerName" placeholder="Введите имя" />
+          <button id="saveScoreBtn">Сохранить результат</button>
+        </div>
+        <div id="savedMsg" class="hidden">Ваш рекорд сохранён.</div>
+        <div class="modal-buttons">
+          <button id="restartAfterGame">Начать заново</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop hidden" id="leaderBackdrop">
+      <div class="modal leaderboard">
+        <h3>Топ-10 рекордов</h3>
+        <table id="leaderTable">
+          <thead><tr><th>#</th><th>Имя</th><th>Очки</th><th>Дата</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <div class="modal-buttons">
+          <button id="closeLeader">Закрыть</button>
+          <button id="clearLeader">Очистить</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop hidden" id="confirmRestartBackdrop">
+      <div class="modal confirm-modal">
+        <h3>Начать заново?</h3>
+        <p>Вы точно хотите начать новую игру? Текущий прогресс будет потерян.</p>
+        <div class="modal-buttons">
+          <button id="confirmRestartYes">Да</button>
+          <button id="confirmRestartNo">Нет</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
